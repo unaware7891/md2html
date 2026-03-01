@@ -70,6 +70,37 @@ int main() {
     html << "<h6>" << line.substr(7) << "</h6>" << std::endl;
     }    
 
+    else if (line.size() > 2 &&
+        line[0] == '-' &&
+        line[1] == ' ') {
+      html << "<ul><li>" << line.substr(2) << "</ul></li>" << std::endl;
+    }
+
+    else if (line.size() > 5 &&
+        line[0] == '-' &&
+        line[1] == ' ' &&
+        line[2] == '[' &&
+        line[3] == ' ' &&
+        line[4] == ']' &&
+        line[5] == ' ') {
+      html << "<ul class=\"checklist\"><li><label><input type=\"checkbox\"/>" << line.substr(5) << "</label></li></ul>" << std::endl;
+    }
+    
+    else if (line.size() > 5 &&
+        line[0] == '-' &&
+        line[1] == ' ' &&
+        line[2] == '[' &&
+        line[3] == 'x' &&
+        line[4] == ']' &&
+        line[5] == ' ') {
+      html << "<ul class=\"checklist\">"
+           << "<li><label>"
+           << "<input type=\"checkbox\" checked=\"checked\"/>" 
+           << line.substr(5) 
+           << "</label></li></ul>" 
+           << std::endl;
+     }
+   
     else {
       html << "<p>" << line << "</p>" << std::endl;
     }
