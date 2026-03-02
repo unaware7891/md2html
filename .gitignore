@@ -39,3 +39,12 @@
 
 # debug information files
 *.dwo
+
+# binary build
+md2html
+
+# compiled commands
+compile_commands.json
+
+# cache
+**/.cache/

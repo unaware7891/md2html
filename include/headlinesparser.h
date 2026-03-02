@@ -1,4 +1,5 @@
 #pragma once
-#include <string>
 
-void cnvtHeadlines(std::istream& line, std::ostream& html);
+#include <iostream>
+
+void convertHeadlines(std::istream& line, std::ostream& html);

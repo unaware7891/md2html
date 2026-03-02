@@ -1,9 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "../include/headlinesparser.h"
-#include "../include/boldparser.h"
-#include "../include/italicparser.h"
+#include "headlinesparser.h"
+#include "boldparser.h"
+#include "italicparser.h"
 
 int main() {
 
@@ -25,9 +25,9 @@ int main() {
     
     convertBold(line);
     convertItalic(line);
-    cnvtHeadlines(line);
+    // convertHeadlines(line); // fix that
 
-    else if (line.size() > 2 &&
+    if (line.size() > 2 &&
         line[0] == '-' &&
         line[1] == ' ') {
       html << "<ul><li>" << line.substr(2) << "</ul></li>" << std::endl;
